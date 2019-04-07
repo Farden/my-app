@@ -8,7 +8,7 @@ node{
      sh "${mvnCMD} clean package"
    }
    stage('Build Docker Image'){
-     sh 'docker build -t kammana/my-app:2.0.0 .'
+     sh 'sudo docker build -t kammana/my-app:2.0.0 .'
    }
    stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
